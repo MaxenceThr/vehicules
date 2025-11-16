@@ -5,7 +5,7 @@ public class Voiture extends Vehicule {
 
     public Voiture(float vitesse, int nbPassager, int nbPortier){
             super(vitesse,nbPassager);
-            this.nbPortiere = nbPortiere;
+            setNbPortiere(nbPortier);
     }
 
     public int getNbPortiere(){
