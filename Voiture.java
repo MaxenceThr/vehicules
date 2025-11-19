@@ -3,7 +3,7 @@ public class Voiture extends Vehicule {
 
     private int nbPortiere;
 
-    public Voiture(float vitesse, int nbPassager, int nbPortier){
+    public Voiture(double vitesse, int nbPassager, int nbPortier){
             super(vitesse,nbPassager);
             setNbPortiere(nbPortier);
     }
@@ -22,7 +22,7 @@ public class Voiture extends Vehicule {
     }
 
     @Override
-    public void setVitesse(float vitesse){
+    public void setVitesse(double vitesse){
          if (vitesse<0 && vitesse >250){
             throw new IllegalArgumentException(" vitesse doit etre comprise entre 0 et 250 inclus !");
         }
@@ -40,4 +40,10 @@ public class Voiture extends Vehicule {
             super.setNbPassager(nbPassager);
         }
     }
+
+    @Override 
+    public String toString(){
+        return "Voiture: [vitesse:"+ getVitesse() +"km/h, passagers: "+ getNbPassager() +", portieres: "+ getNbPortiere() +"]";
+    }
+
 }

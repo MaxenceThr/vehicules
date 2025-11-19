@@ -1,21 +1,21 @@
 package vehicules;
-class Vehicule{
-    private float vitesse;
+public class Vehicule{
+    private double vitesse;
     private int nbPassager;
 
-    public Vehicule(float vitesse,int nbPassager){
+    public Vehicule(double vitesse,int nbPassager){
         setVitesse(vitesse);
         setNbPassager(nbPassager);
     }
 
-    public float getVitesse(){
+    public double getVitesse(){
         return vitesse;
     }
     public int getNbPassager(){
         return nbPassager;
     }
 
-    void setVitesse(float vitesse){
+    public void setVitesse(double vitesse){
         if (vitesse<0){
             throw new IllegalArgumentException(" vitesse ne peut pas etre null !");
         }
@@ -23,7 +23,7 @@ class Vehicule{
             this.vitesse = vitesse;
         }
     }
-    void setNbPassager(int nbPassager){
+    public void setNbPassager(int nbPassager){
         if (nbPassager<0){
             throw new IllegalArgumentException("nombre de passager ne peut pas etre null !");
         }
@@ -31,5 +31,9 @@ class Vehicule{
             this.nbPassager = nbPassager;
         }
 
+    }
+
+    public String toString(){
+        return "Vehicule: [vitesse: "+getVitesse()+" km/h, passagers: "+getNbPassager()+"]";
     }
 }

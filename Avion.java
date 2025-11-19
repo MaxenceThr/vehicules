@@ -1,9 +1,9 @@
 package vehicules;
-class Avion extends Vehicule{
+public class Avion extends Vehicule{
     
     private int nbMoteur;
 
-    public Avion(float vitesse, int nbPassager){
+    public Avion(double vitesse, int nbPassager,int nbMoteur){
         super(vitesse,nbPassager);
         setNbMoteur(nbMoteur);
     }
@@ -22,7 +22,7 @@ class Avion extends Vehicule{
         }
     }
     @Override
-    public void setVitesse(float vitesse){
+    public void setVitesse(double vitesse){
         if (vitesse<0 && vitesse >1000){
             throw new IllegalArgumentException(" vitesse ne peut pas etre null !");
         }
@@ -31,7 +31,7 @@ class Avion extends Vehicule{
         }
     }
     @Override
-    void setNbPassager(int nbPassager){
+    public void setNbPassager(int nbPassager){
         if (nbPassager<5 && nbPassager>200){
             throw new IllegalArgumentException("nombre de passager doit etre entre 5 et 200 inclus !");
         }
@@ -39,6 +39,14 @@ class Avion extends Vehicule{
             super.setNbPassager(nbPassager);
         }
 
+    }
+
+    
+
+
+    @Override 
+    public String toString(){
+        return "Avion: [vitesse: "+super.getVitesse()+" km/h, passagers: "+super.getNbPassager()+", moteurs: "+getNbMoteur()+"]";
     }
 
 }
